@@ -9,4 +9,4 @@ class TechnicalDocument(models.Model):
     file = fields.Binary(string="Fichier", attachment=True, required=True)
     filename = fields.Char(string="Nom du Fichier")
     version = fields.Char(string="Version", default="1.0")
-    create_date = fields.Date(string="Date de Création", default=fields.Date.today)
+    document_date = fields.Date(string="Date du Document", default=fields.Date.today)  # Nouveau nom si une date spécifique est nécessaire
