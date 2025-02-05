@@ -1,0 +1,9 @@
+<odoo>
+    <record id="seq_woodwork_project" model="ir.sequence">
+        <field name="name">Woodwork Project Sequence</field>
+        <field name="code">woodwork.project</field>
+        <field name="prefix">PROJ-</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>
