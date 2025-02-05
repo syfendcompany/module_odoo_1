@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Données de démonstration pour les produits -->
+    <record id="demo_product_1" model="product.template">
+        <field name="name">Table en chêne</field>
+        <field name="is_assembly">True</field>
+        <field name="technical_sheet_id" ref="demo_technical_sheet_1"/>
+        <field name="design_file_id" ref="demo_design_file_1"/>
+    </record>
+
+    <record id="demo_product_2" model="product.template">
+        <field name="name">Chaise en pin</field>
+        <field name="is_assembly">False</field>
+        <field name="parent_id" ref="demo_product_1"/>
+    </record>
+
+    <!-- Données de démonstration pour les projets -->
+    <record id="demo_project_1" model="project.project">
+        <field name="name">Projet Table et Chaises</field>
+        <field name="production_status">draft</field>
+        <field name="deadline">2023-12-31</field>
+        <field name="product_ids" eval="[(6, 0, [ref('demo_product_1'), ref('demo_product_2')])]"/>
+    </record>
+
+    <!-- Données de démonstration pour les matériaux -->
+    <record id="demo_material_1" model="woodwork.material">  <!-- Changé de 'woodworking.material' à 'woodwork.material' -->
+        <field name="name">Chêne</field>
+        <field name="type">wood</field>
+        <field name="supplier_id" ref="base.res_partner_1"/> <!-- Exemple de fournisseur -->
+        <field name="cost">50.0</field>
+    </record>
+
+    <record id="demo_material_2" model="woodwork.material">  <!-- Changé de 'woodworking.material' à 'woodwork.material' -->
+        <field name="name">Pin</field>
+        <field name="type">wood</field>
+        <field name="supplier_id" ref="base.res_partner_2"/> <!-- Exemple de fournisseur -->
+        <field name="cost">30.0</field>
+    </record>
+
+    <!-- Données de démonstration pour les documents techniques -->
+    <record id="demo_technical_sheet_1" model="ir.attachment">
+        <field name="name">Fiche technique Table en chêne</field>
+        <field name="res_model">product.template</field>
+        <field name="res_id" ref="demo_product_1"/>
+    </record>
+
+    <record id="demo_design_file_1" model="ir.attachment">
+        <field name="name">Fichier 3D Table en chêne</field>  <!-- Supprimé la duplication du champ 'name' -->
+        <field name="res_model">product.template</field>
+        <field name="res_id" ref="demo_product_1"/>
+    </record>
+</odoo>

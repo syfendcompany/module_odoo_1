@@ -1,0 +1,17 @@
+<odoo>
+    <!-- Ce fichier définit les groupes de sécurité pour le module Woodworking Workshop. -->
+
+    <!-- Groupe pour les utilisateurs standard -->
+    <record id="group_woodwork_user" model="res.groups">
+        <field name="name">Woodwork User</field>
+        <field name="category_id" ref="base.module_category_manufacturing"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>  <!-- Hérite des permissions de base.group_user -->
+    </record>
+
+    <!-- Groupe pour les gestionnaires -->
+    <record id="group_woodwork_manager" model="res.groups">
+        <field name="name">Woodwork Manager</field>
+        <field name="category_id" ref="base.module_category_manufacturing"/>
+        <field name="implied_ids" eval="[(4, ref('group_woodwork_user'))]"/>  <!-- Hérite des permissions de group_woodwork_user -->
+    </record>
+</odoo>

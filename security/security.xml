@@ -1,0 +1,7 @@
+<odoo>
+    <!-- Ce fichier définit les groupes de sécurité pour le module Woodworking Workshop. -->
+    <record id="group_woodwork_manager" model="res.groups">
+        <field name="name">Woodwork Manager</field>  <!-- Changé de 'Woodworking Manager' à 'Woodwork Manager' -->
+        <field name="category_id" ref="base.module_category_manufacturing"/>
+    </record>
+</odoo>

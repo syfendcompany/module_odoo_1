@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Menu principal -->
+    <menuitem id="menu_woodwork_root" name="Woodworking" sequence="10"/>
+
+    <!-- Sous-menus -->
+    <menuitem id="menu_woodwork_projects" name="Projects" parent="menu_woodwork_root" action="action_woodwork_projects"/>
+    <menuitem id="menu_woodwork_materials" name="Materials" parent="menu_woodwork_root" action="action_woodwork_materials"/>
+    <menuitem id="menu_woodwork_products" name="Products" parent="menu_woodwork_root" action="action_woodwork_products"/>
+    <menuitem id="menu_woodwork_tasks" name="Tasks" parent="menu_woodwork_root" action="action_woodwork_tasks"/>
+
+    <!-- Actions -->
+    <record id="action_woodwork_products" model="ir.actions.act_window">
+        <field name="name">Woodwork Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_woodwork_projects" model="ir.actions.act_window">
+        <field name="name">Woodwork Projects</field>
+        <field name="res_model">project.project</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_woodwork_tasks" model="ir.actions.act_window">
+        <field name="name">Woodwork Tasks</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_woodwork_materials" model="ir.actions.act_window">
+        <field name="name">Woodwork Materials</field>
+        <field name="res_model">woodwork.material</field>  <!-- Changé de 'woodworking.material' à 'woodwork.material' -->
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
